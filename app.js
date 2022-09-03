@@ -12,23 +12,27 @@ let arrayOfTodos = [
     "completed": false
 }]
 
+let arrayResults
+
 const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
-    .then( (response) => response.json())
-    .then( (json) => arrayOfTodos = json)
+    .then( response => response.json())
+    .then (data => {
+        arrayResults = data
+        console.log('results:', arrayResults)
+    })
 }
 
 const logTodos = () => {
-    console.log(arrayOfTodos)
+    console.log(arrayResults)
 }
 
 const populateTodos = () => {
-    console.log('test')
     createArrayList()
-}
+};
 
 function createArrayList() {
-    let element = document.queryselector('.todo-list')
+    let element = document.querySelector('.todo-list')
     
     arrayResults.forEach(arrayResults => {
         let liTag = document.createElement('li')
@@ -39,10 +43,11 @@ function createArrayList() {
 
 function filterByID () {
     console.log("Test Button")
-    let SelectID = document.queryselector(#idList).value
+    let selectID = document.queryselector('#idList').value
     let filteredID = arrayResults.filter(arrayResult => {
         console.log('ID Filter:', arrayResult)
         console.log(arrayResult.userId == SelectID)
+        return arrayResults.userID == SelectID
     })
     setFilteredList(filteredID)
 }
