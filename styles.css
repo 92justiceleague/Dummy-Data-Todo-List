@@ -1,0 +1,49 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let arrayResults
+
+const fetchTodos = () => {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+.then(response => response.json())
+.then(data => {
+    arrayResults = data
+    console.log('results:', arrayResults)
+})
+}
+
+const logTodos = () => {
+    console.log(arrayResults)
+}
+
+const populateTodos = () => {
+    console.log('test')
+    createArrayList()
+};
+
+function createArrayList() {
+    let element = document.queryselector('.todo-list')
+    
+    arrayResults.forEach(arrayResults => {
+        let liTag = document.createElement('li')
+        liTag.innerText = arrayResults.title
+        element.appendChild(liTag)
+    })
+}
+
+
+
+
