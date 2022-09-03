@@ -4,11 +4,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./app.js">
 </head>
 <body>
     <button onclick="fetchTodos()">Fetch Todos</buttton>
     <button onclick="logTodos()">Log Todos</button>
     <button onclick="populateTodos()">Populate Todos</button>
+    <nav>
+        <select name="idList" id="idList">
+            <option value="1">1</option>
+            <option value="1">2</option>
+            <option value="1">3</option>
+            <option value="1">4</option>
+            <option value="1">5</option>
+            <option value="1">6</option>
+            <option value="1">7</option>
+            <option value="1">8</option>
+            <option value="1">9</option>
+            <option value="1">10</option>
+        </select>
+        <button onclick="filterByID()">Filter</button>
+    </nav>
     <ol class="todo-list">
         <!--LIs will go here -->
     </ol>
